@@ -1,5 +1,629 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brandon Mantzey | Holden, Missouri</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a4d2e;
+            --primary-dark: #0f2818;
+            --accent: #d4763b;
+            --text-dark: #0a0a0a;
+            --text-medium: #2a2a2a;
+            --text-light: #4a4a4a;
+            --bg-cream: #faf7f2;
+            --bg-cream-alt: #f0ebe3;
+            --bg-white: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 400;
+            line-height: 1.7;
+            color: #0a0a0a;
+            background: #faf7f2;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 4rem 0;
+            background: #ffffff;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-text h1 {
+            font-family: 'Bitter', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #1a4d2e;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+        
+        .hero-text p {
+            font-size: 1.3rem;
+            color: #2a2a2a;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-photo {
+            position: relative;
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+        }
+        
+        .hero-photo img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 
+                0 20px 60px var(--shadow),
+                0 0 0 1px rgba(44, 85, 48, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-photo img:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+            position: relative;
+            background: #ffffff;
+        }
+        
+        section:nth-child(even) {
+            background: #faf7f2;
+        }
+        
+        .section-header {
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .section-header h2 {
+            font-family: 'Bitter', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a4d2e;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #d4763b;
+        }
+        
+        .section-content {
+            font-size: 1.1rem;
+            color: #2a2a2a;
+            line-height: 1.8;
+        }
+        
+        .section-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* What I Do - Compact Style */
+        .what-i-do {
+            background: #0f2818;
+            color: #faf7f2;
+            padding: 3rem 0;
+        }
+        
+        .what-i-do .section-content {
+            color: #faf7f2;
+            font-size: 1.2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .what-i-do .section-header h2 {
+            color: #faf7f2 !important;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .what-i-do .section-header h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+            background: #d4763b;
+        }
+        
+        .what-i-do .section-content {
+            color: #ffffff;
+            font-size: 1.2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .what-i-do .section-header h2 {
+            color: #ffffff !important;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .what-i-do .section-header h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+        }
+        
+        /* Family Cards */
+        .family-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .family-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #e0ddd5;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+        
+        .family-card:nth-child(1) { animation-delay: 0.1s; }
+        .family-card:nth-child(2) { animation-delay: 0.2s; }
+        .family-card:nth-child(3) { animation-delay: 0.3s; }
+        .family-card:nth-child(4) { animation-delay: 0.4s; }
+        
+        .family-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            border-color: #d4763b;
+        }
+        
+        .family-card h3 {
+            font-family: 'Bitter', serif;
+            font-size: 1.5rem;
+            color: #1a4d2e;
+            margin-bottom: 0.75rem;
+        }
+        
+        .family-card p {
+            font-size: 1rem;
+            color: #2a2a2a;
+            line-height: 1.6;
+        }
+        
+        /* Hobbies Grid */
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        
+        .hobby-item {
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+        
+        .hobby-item:nth-child(1) { animation-delay: 0.1s; }
+        .hobby-item:nth-child(2) { animation-delay: 0.15s; }
+        .hobby-item:nth-child(3) { animation-delay: 0.2s; }
+        .hobby-item:nth-child(4) { animation-delay: 0.25s; }
+        .hobby-item:nth-child(5) { animation-delay: 0.3s; }
+        .hobby-item:nth-child(6) { animation-delay: 0.35s; }
+        .hobby-item:nth-child(7) { animation-delay: 0.4s; }
+        .hobby-item:nth-child(8) { animation-delay: 0.45s; }
+        .hobby-item:nth-child(9) { animation-delay: 0.5s; }
+        
+        .hobby-item h3 {
+            font-family: 'Bitter', serif;
+            font-size: 1.4rem;
+            color: #1a4d2e;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hobby-item p {
+            font-size: 1rem;
+            color: #2a2a2a;
+            line-height: 1.7;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: #0f2818 !important;
+            color: #faf7f2 !important;
+            text-align: center;
+        }
+        
+        .contact * {
+            color: #faf7f2 !important;
+        }
+        
+        .contact .section-header h2 {
+            color: #faf7f2 !important;
+        }
+        
+        .contact .section-header h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+            background: #d4763b !important;
+        }
+        
+        .contact-intro {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #faf7f2 !important;
+        }
+        
+        .contact p {
+            color: #faf7f2 !important;
+        }
+        
+        .contact .section-header h2 {
+            color: #ffffff !important;
+        }
+        
+        .contact .section-header h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+        }
+        
+        .contact-intro {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #ffffff;
+        }
+        
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            background: rgba(250, 247, 242, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid rgba(250, 247, 242, 0.3);
+            transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-3px);
+            background: rgba(250, 247, 242, 0.15);
+            border-color: #d4763b;
+        }
+        
+        .contact-item h3 {
+            font-family: 'Bitter', serif;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #d4763b;
+        }
+        
+        .contact-item a {
+            color: #faf7f2 !important;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-item a:hover {
+            color: #d4763b !important;
+        }
+        
+        .contact-item p {
+            color: #faf7f2 !important;
+            font-size: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0a1810;
+            color: #faf7f2;
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 0.9rem;
+            border-top: 1px solid #1a4d2e;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-text p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-photo img {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .family-grid,
+            .hobbies-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+        }
+        
+        /* Scroll animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        section {
+            animation: fadeIn 0.8s ease-out;
+        }
+    </style>
+</head>
 <body>
-<p>Hello World!! :P    </p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hey, I'm Brandon!</h1>
+                    <p>Father of four amazing kids, tech enthusiast, and proud Xennial from Holden, Missouri.</p>
+                </div>
+                <div class="hero-photo">
+                    <img src="IMG_2036.jpeg" alt="Brandon Mantzey">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Me</h2>
+            </div>
+            <div class="section-content">
+                <p>I was born in 1977 and grew up with technology as part of my DNA. I'm what they call a Xennial—that micro-generation caught between Gen X and Millennials. While some of my peers lean toward Gen X traits, I've always been fascinated by technology, which pushed me more toward the Millennial side of things.</p>
+                
+                <p>Technology isn't just what I do; it's who I am. I grew up in an era when computers were obsolete the day after you bought them. I watched Apple fire Steve Jobs, nearly collapse, bring him back, and then become the most successful tech company in history. Sometimes I think about going back to 1994, dropping out of high school, working three jobs, and investing everything into Apple stock. I'd be a multi-millionaire today—if only I'd known!</p>
+                
+                <p>Learning new technologies and adapting to the ever-changing tech landscape is second nature to me. What I consider trivial, others sometimes assume I know nothing about. That's the beauty and challenge of living in a world where technology never stops evolving.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What I Do Section -->
+    <section class="what-i-do">
+        <div class="container">
+            <div class="section-header">
+                <h2>What I Do</h2>
+            </div>
+            <div class="section-content">
+                <p>I'm a Senior iOS Software Engineer with over 16 years of experience building native iOS applications. I'm also a United States Air Force veteran, which taught me discipline, precision, and the value of service. Technology has been my career, but it's the people and connections I make along the way that matter most.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Family Section -->
+    <section id="family">
+        <div class="container">
+            <div class="section-header">
+                <h2>Family First</h2>
+            </div>
+            <div class="section-content">
+                <p>My kids are the greatest joy in my life. I know that sounds cliché, but I'm absolutely blessed to have two boys and two girls—in that order. Many people fear the work and responsibility of having children, but to me, my kids give my life meaning. The effort I put into loving and providing for them is the most important thing I can do, because I know that someday they'll be there for me as I am for them now.</p>
+            </div>
+            
+            <div class="family-grid">
+                <div class="family-card">
+                    <h3>Daeron</h3>
+                    <p>A musician, entrepreneur, chef, and genius. He can pick up any instrument, fiddle with it for a few minutes, and start playing. He's pursuing a degree in Business Management and dreams of opening his own restaurant someday. He loves anime, video games, and has mastered yo-yo tricks that'll blow your mind.</p>
+                </div>
+                
+                <div class="family-card">
+                    <h3>Ryan</h3>
+                    <p>An athlete through and through. He's played soccer, baseball, and basketball, and has won first place multiple times in weightlifting competitions. He's enlisted in the US Air Force and is set to ship out in February 2026 to help pay for his psychology degree. He also cuts hair for extra money, fixes his own car, and can solve a Rubik's cube in under a minute consistently.</p>
+                </div>
+                
+                <div class="family-card">
+                    <h3>Mae</h3>
+                    <p>A strong young lady active in AFJROTC. She's on the drill team and part of the Raiders—a physically demanding team that tackles 5Ks, obstacle courses, and other intense challenges. She wants to be a Loadmaster and has hinted at becoming an officer. For fun, she hangs out with friends, juggles, rides a unicycle, and bakes like a pro.</p>
+                </div>
+                
+                <div class="family-card">
+                    <h3>Thea</h3>
+                    <p>Still the baby, but she's already making her mark. She loves to read advanced books like Beowulf and recently won her elementary school spelling bee. She's headed to the district competition next. It's exciting to watch her discover what she's passionate about.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hobbies & Interests</h2>
+            </div>
+            
+            <div class="hobbies-grid">
+                <div class="hobby-item">
+                    <h3>Cooking</h3>
+                    <p>I'm serious about my barbecue and grilling. I've mastered the art of charcoal cooking—brisket, pulled pork, ribs (beef and pork), smoked sausages, chicken, turkey, wings, meatloaf, you name it. I've also perfected the art of steak craft and can consistently produce a perfectly cooked steak. Whether it's on the smoker, the grill, or in the kitchen, I love creating delicious meals.</p>
+                </div>
+                
+                <div class="hobby-item">
+                    <h3>Shooting</h3>
+                    <p>I qualified as a marksman three times during my active duty in the Air Force, and I still enjoy shooting for target practice. It's a skill I'm proud of and a hobby I find relaxing.</p>
+                </div>
+                
+                <div class="hobby-item">
+                    <h3>Fishing</h3>
+                    <p>Who doesn't love fishing? I'm pretty good at it, but honestly, it's more about the enjoyment than flexing any skills. There's something peaceful about being out on the water.</p>
+                </div>
+                
+                <div class="hobby-item">
+                    <h3>Mountain Biking</h3>
+                    <p>This is an old passion I haven't pursued in a while since I'm not in the right shape for it. But I've mountain biked in Colorado, Kansas, Missouri, Nebraska, Iowa, New York, Connecticut, and even Korea. Someday I'll get back out there.</p>
+                </div>
+                
+                <div class="hobby-item">
+                    <h3>Weight Lifting</h3>
+                    <p>I own a set of weights and fitness equipment that I use every now and then (though not as often as I should!). When I was younger, I was really into weight lifting and found the fittest time of my life. It's something I'd like to get back into more seriously.</p>
+                </div>
+                
+                <div class="hobby-item">
+                    <h3>Racquetball</h3>
+                    <p>Racquetball is the most fun and healthy way to do cardio, in my opinion. I enjoy playing, but I prefer it casual—when it gets ultra-competitive, I'd rather find another partner or just play by myself.</p>
+                </div>
+                
+                <div class="hobby-item">
+                    <h3>Home Brew</h3>
+                    <p>I've been making home brew on and off for over 20 years. Most of my brews have been successful, though there have been a few learning experiences that unfortunately got dumped out. Now I can make a very good brew quite consistently. I wish I had the time and the right setup to keep doing it—it's been a while.</p>
+                </div>
+                
+                <div class="hobby-item">
+                    <h3>Video Games</h3>
+                    <p>This was more of a childhood passion that I enjoyed until I decided to pursue game development as a career. I'm not sure if learning the behind-the-scenes disenchanted video games for me, or if starting a family shifted my priorities. Either way, I still enjoy playing here and there, but I'm very much a casual gamer these days.</p>
+                </div>
+                
+                <div class="hobby-item">
+                    <h3>Hunting</h3>
+                    <p>This is more something I want to do than something I've done a lot of. I've spent money on the right equipment but haven't had many opportunities for what I'd consider a successful hunt. In high school, my dad and uncle took me dove and pheasant hunting. I accidentally shot a hen (you're not supposed to), but it was a learning experience. I'd love the opportunity to do some big game hunting—deer, elk, or moose—with someone who can show me how to properly field dress an animal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Let's Connect</h2>
+            </div>
+            <p class="contact-intro">I'm always open to meeting new people, making friends, and connecting over shared interests. Whether you want to talk tech, swap barbecue recipes, hit the range, or just grab coffee and chat, I'd love to hear from you.</p>
+            
+            <div class="contact-methods">
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <a href="mailto:brandon@mantzey.com">brandon@mantzey.com</a>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>Phone</h3>
+                    <a href="tel:402-213-6348">402-213-6348</a>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>LinkedIn</h3>
+                    <a href="https://linkedin.com/in/bmantzey" target="_blank">linkedin.com/in/bmantzey</a>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>Facebook</h3>
+                    <a href="https://www.facebook.com/brandon.mantzey" target="_blank">facebook.com/brandon.mantzey</a>
+                </div>
+            </div>
+            
+            <p class="contact-intro" style="margin-top: 2rem;">Location: Holden, Missouri</p>
+            <p class="contact-intro" style="font-size: 1.1rem; margin-top: 1rem;">Looking forward to connecting!</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Brandon Mantzey. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
