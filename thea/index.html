@@ -1,5 +1,316 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thea's Friendly Story</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
-<p>Thea TODO: Learn how to make a web page!</p>
+    <!-- Floating Hearts -->
+    <div class="heart-container">
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+    </div>
+
+    <!-- Side Navigation -->
+    <nav class="sidenav">
+        <h1>Thea's Friendly Story</h1>
+        <p class="subtitle">Welcome to my world! ♥</p>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#story">My Story</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#happy">What Makes Me Happy</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Home Section -->
+        <section id="home">
+            <div class="welcome-message">Hi, I'm Thea!</div>
+            <div class="tagline">This is Thea's Friendly Story</div>
+            <p style="font-size: 22px; max-width: 700px; text-align: center;">Welcome to my personal website! I'm 11 years old and I love sharing my adventures, memories, and the things that make me happy. Come explore my world!</p>
+            <img src="images/IMG_1521.jpeg" alt="Thea wearing a hat" style="max-width: 400px; width: 100%; height: auto; border-radius: 15px; box-shadow: 0 8px 25px rgba(211, 47, 47, 0.2); margin-top: 30px;">
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            
+            <div class="info-box">
+                <h3>The Basics</h3>
+                <ul>
+                    <li>Born in Connecticut</li>
+                    <li>I'm 4'6" tall</li>
+                    <li>I'm 11 years old and a Virgo ♍</li>
+                    <li>Youngest of 4 siblings!</li>
+                </ul>
+            </div>
+
+            <h3>My Family</h3>
+            <p>I have an amazing family! I have three older siblings:</p>
+            <ul>
+                <li><strong>Daeron</strong> - My oldest brother (19 years old)</li>
+                <li><strong>Ryan</strong> - My other brother (18 years old)</li>
+                <li><strong>Mae</strong> - My sister (15 years old)</li>
+            </ul>
+
+            <div class="info-box">
+                <p><strong>About my parents:</strong> My mom is Filipina and my dad is of German origin. I love them both so much!</p>
+                <p>I love visiting my dad's house on the weekends because I like eating his yummy steaks and food. I get to hang out with dad and my siblings all together, watch movies, and spend quality time with my dad. I really love my dad's big yard because there's always so much to do outside with all the space we have, and we can go play at the lake too!</p>
+                <p>I like hanging out with mom because we talk about how things are going for us, and I like to tell her how things are going at school. We also talk about things that we like. She talks to me and Mae about her coupon shopping that she's excited about!</p>
+            </div>
+
+            <h3>My Furry Friends</h3>
+            <p>I have two wonderful dogs that I love so much:</p>
+            <ul>
+                <li><strong>Bandit</strong> - Our 9-year-old Husky. She's energetic and playful!</li>
+                <li><strong>Major</strong> - Our 18-year-old white lab. We fostered him when he was 9 years old from my Aunt Amber after she passed away. I learned how to take care of him by myself - I take him for walks, feed him, and clean up after his messes in the yard.</li>
+            </ul>
+
+            <button class="photo-toggle" onclick="togglePhoto('dogs')">Show photos of Bandit and Major</button>
+            <div id="dogs" class="photo-container">
+                <div class="photo-grid">
+                    <img src="images/IMG_8148.jpeg" alt="Bandit the Husky">
+                    <img src="images/IMG_0051.jpeg" alt="Major the white lab">
+                </div>
+            </div>
+
+            <h3>My Favorites</h3>
+            <ul>
+                <li><strong>Favorite Toy:</strong> Simon Says</li>
+                <li><strong>Favorite Stuffed Animal:</strong> Duchess</li>
+                <li><strong>Favorite Colors:</strong> Red and Black</li>
+                <li><strong>Favorite Food:</strong> Dad's medium-rare steaks</li>
+                <li><strong>Comfort Food:</strong> Spicy Kimchi Ramen</li>
+            </ul>
+
+            <h3>Things I Love to Do</h3>
+            <ul>
+                <li>Playing softball ⚾</li>
+                <li>Going to NASCAR races 🏎️</li>
+                <li>Going to KC Royals games</li>
+            </ul>
+        </section>
+
+        <!-- My Story Section -->
+        <section id="story">
+            <h2>My Story</h2>
+            <p>Here are some of my favorite memories and special moments from my life so far!</p>
+
+            <div class="memory-card">
+                <h3>Living with Grandparents in Stockton, MO</h3>
+                <p>I always played with chalk on the driveway, which was so much fun! I would watch movies with Mae and Ryan a lot. We did planks and push-ups with Dad to stay fit during COVID. I loved trying to use a hula-hoop or a jump-rope, even though I wasn't very good at it!</p>
+            </div>
+
+            <div class="memory-card">
+                <h3>Pumpkin Patch Adventure</h3>
+                <p>We went to a pumpkin patch in the fall and there was a pumpkin catapult that they allowed us to trigger. I was leaning forward in the wrong place when I pulled the trigger and the catapult whacked me right in the face! I was okay but it was scary.</p>
+                <p>We also got to pet kittens, goats, and puppies too. We got to pick out our own pumpkin and we did other fun games like pumpkin bowling and a corn maze.</p>
+            </div>
+
+            <div class="memory-card">
+                <h3>Japanese Cousin Visits America</h3>
+                <p>My Japanese cousin, Izumi, visited us from Japan by surprise! She brought us special snacks from Japan that were super tasty. We had to communicate using Google Translate, which was very fun because we would joke and laugh and tease Daeron too.</p>
+                <p>She would use silly face filters on me, so I did it back to her for fun!</p>
+
+                <button class="photo-toggle" onclick="togglePhoto('izumi')">Show photos with Izumi</button>
+                <div id="izumi" class="photo-container">
+                    <div class="photo-grid">
+                        <img src="images/Thea_and_Izumi.JPG" alt="Thea and Izumi together">
+                        <img src="images/Ate_Izumi.JPG" alt="With Ate Izumi">
+                        <img src="images/Silly.JPG" alt="Being silly together">
+                    </div>
+                </div>
+            </div>
+
+            <div class="memory-card">
+                <h3>Drinking Shirley Temples</h3>
+                <p>One of my favorite treats - enjoying delicious Shirley Temples with friends and family!</p>
+
+                <button class="photo-toggle" onclick="togglePhoto('shirley')">Show Shirley Temple photos</button>
+                <div id="shirley" class="photo-container">
+                    <div class="photo-grid">
+                        <img src="images/Drinking_Shirley_Temples.JPG" alt="Drinking Shirley Temples">
+                        <img src="images/Shirley_Temples_2.JPG" alt="More Shirley Temple fun">
+                    </div>
+                </div>
+            </div>
+
+            <div class="memory-card">
+                <h3>Christmas with Grandparents</h3>
+                <p>I loved going to visit my grandparents for Christmas because grandma always knew how to make a great Christmas meal. I loved petting her two dogs too: Thor (a German Shepherd) and Freya (a huge Malamute).</p>
+                <p>The decorations at grandma's house are always so pretty!</p>
+            </div>
+
+            <div class="memory-card">
+                <h3>My 11th Birthday Party (with Dad)</h3>
+                <p>I got to invite my very special friends and I was so happy that they came! We ran around a lot. The cake was good, the food was good, and I climbed a tree.</p>
+                <p>It was special to me because I was able to help plan this one instead of it being planned for me.</p>
+            </div>
+
+            <div class="memory-card">
+                <h3>My 9th Birthday Party (with Mom)</h3>
+                <p>I learned how to roller skate at Rink Rats! One of my friends there taught me how to sketch and draw.</p>
+            </div>
+
+            <div class="memory-card">
+                <h3>Meeting My Softball Friends</h3>
+                <p>Dad signed me up to play softball and I was so happy! We would play around so much. The first two weeks, I couldn't remember their names, but then I got used to them and remembered. We would have so much fun, but we did have our serious moments while practicing too.</p>
+            </div>
+
+            <div class="memory-card">
+                <h3>Joining Franklin Smith Elementary</h3>
+                <p>What I liked about starting school here was how everybody would make me feel welcome. We would be assigned "building jobs" where we had the chance to be responsible and help out around the school building.</p>
+                <p>The teachers there were very very nice to me and I made lots of friends there!</p>
+            </div>
+
+            <h3>My Favorite Teachers</h3>
+            <ul>
+                <li><strong>Ms. Stingley</strong> - My 1st grade teacher</li>
+                <li><strong>Ms. Sally</strong> - My daycare teacher</li>
+            </ul>
+
+            <h3>Fun Times!</h3>
+            <button class="photo-toggle" onclick="togglePhoto('fun')">Show fun photos</button>
+            <div id="fun" class="photo-container">
+                <div class="photo-grid">
+                    <img src="images/IMG_1532.jpeg" alt="Playing and being silly">
+                    <img src="images/IMG_1839.jpeg" alt="More fun moments">
+                    <img src="images/IMG_6174.JPG" alt="Having fun">
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements">
+            <h2>Achievements & Proud Moments</h2>
+            
+            <div class="info-box">
+                <h3>Things I've Learned</h3>
+                <ul>
+                    <li>Learning to ride a bike with one hand</li>
+                    <li>Learning to ride a bike</li>
+                    <li>Learning to swim</li>
+                    <li>Learning how to sketch and draw</li>
+                    <li>Learning how to make origami</li>
+                </ul>
+            </div>
+
+            <div class="memory-card">
+                <h3>🏆 Spelling Bee Champion!</h3>
+                <p>I won both my class spelling bee AND my school spelling bee! Then I got to compete in the district spelling bee. This was such an amazing achievement and I'm really proud of myself!</p>
+
+                <button class="photo-toggle" onclick="togglePhoto('spelling')">Show spelling bee photo</button>
+                <div id="spelling" class="photo-container">
+                    <img src="images/IMG_0293.jpeg" alt="Thea with spelling bee certificate">
+                </div>
+            </div>
+
+            <h3>Other Proud Moments</h3>
+            <ul>
+                <li>Showing off my first GOOD drawing</li>
+                <li>Spending my own money responsibly for the first time</li>
+                <li>Reading my first chapter book: "And They Found Dragons - The Boy Who Fell From The Stars"</li>
+                <li>Getting the highest score in the class on HMH (a school math competition)</li>
+                <li>Getting 100% on tests</li>
+                <li>Catching my first fish at the lake behind dad's house - a good sized bass!</li>
+            </ul>
+        </section>
+
+        <!-- What Makes Me Happy Section -->
+        <section id="happy">
+            <h2>What Makes Me Happy</h2>
+            
+            <div class="info-box">
+                <p style="font-size: 20px; margin-bottom: 0;">These are the things that bring joy to my life every day!</p>
+            </div>
+
+            <ul style="font-size: 20px;">
+                <li>Playing games with friends</li>
+                <li>Playing with Bandit, our 9-year-old Husky</li>
+                <li>Kickball at recess</li>
+                <li>Basketball at recess</li>
+                <li>Spending time with my family</li>
+                <li>Making new friends</li>
+                <li>Learning new things</li>
+            </ul>
+
+            <div class="memory-card" style="text-align: center; margin-top: 50px;">
+                <h3 style="font-size: 36px;">Thank you for visiting my website!</h3>
+                <p style="font-size: 20px;">I hope you enjoyed learning about me and my story. Feel free to reach out anytime!</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Thanks for stopping by to get to know me!</h3>
+        <p><strong>Email:</strong> <a href="mailto:thea@mantzey.com">thea@mantzey.com</a></p>
+        <p><strong>Apple Messages:</strong> <a href="imessage://theapinay@icloud.com">theapinay@icloud.com</a></p>
+        <p style="margin-top: 30px; font-size: 16px;">Made with ♥ by Thea Mantzey</p>
+    </footer>
+
+    <script>
+        // Photo toggle functionality
+        function togglePhoto(id) {
+            const container = document.getElementById(id);
+            const button = event.target;
+            
+            if (container.classList.contains('active')) {
+                container.classList.remove('active');
+                button.textContent = button.textContent.replace('Hide', 'Show');
+            } else {
+                container.classList.add('active');
+                button.textContent = button.textContent.replace('Show', 'Hide');
+            }
+        }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('.nav-links a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+                
+                // Update active link
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Update active nav on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
