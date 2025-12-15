@@ -1,0 +1,468 @@
+/* CSS Variables for Colors */
+:root {
+    --lilac-bg: #E6E6FA;
+    --dark-violet: #4B0082;
+    --light-violet: #8A2BE2;
+    --leaf-green: #6B8E23;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --shadow: rgba(75, 0, 130, 0.2);
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: var(--lilac-bg);
+    color: var(--dark-violet);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+/* Falling Leaves Animation */
+.leaves-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.leaf {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    opacity: 0.5;
+    animation: fall linear infinite;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: brightness(0.5) sepia(100%) saturate(500%) hue-rotate(250deg);  /* Dark violet to match text */
+}
+
+.leaf.leaf1 {
+    background-image: url('../images/Leaf_1.png');
+}
+
+.leaf.leaf2 {
+    background-image: url('../images/Leaf_2.png');
+}
+
+.leaf.leaf3 {
+    background-image: url('../images/Leaf_3.png');
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+/* Side Navigation */
+.side-nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(180deg, var(--dark-violet), var(--light-violet));
+    padding: 30px 20px;
+    z-index: 100;
+    overflow-y: auto;
+    box-shadow: 4px 0 10px var(--shadow);
+}
+
+.nav-title {
+    color: white;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.side-nav ul {
+    list-style: none;
+}
+
+.side-nav ul li {
+    margin: 15px 0;
+}
+
+.side-nav ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 1em;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.side-nav ul li a:hover,
+.side-nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    transform: translateX(5px);
+}
+
+/* Main Content */
+.content {
+    margin-left: 250px;
+    padding: 40px 60px;
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 40px 0 60px;
+}
+
+header h1 {
+    font-size: 3em;
+    color: var(--dark-violet);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px var(--shadow);
+}
+
+.subtitle {
+    font-size: 1.3em;
+    color: var(--light-violet);
+    font-style: italic;
+}
+
+/* Sections */
+section {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px var(--shadow);
+    backdrop-filter: blur(10px);
+}
+
+section h2 {
+    color: var(--dark-violet);
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--light-violet);
+}
+
+section h3 {
+    color: var(--light-violet);
+    font-size: 1.6em;
+    margin: 30px 0 15px;
+}
+
+section p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+section ul {
+    margin-left: 30px;
+    margin-bottom: 15px;
+}
+
+section ul li {
+    margin: 10px 0;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.content-wrapper.full-width {
+    display: block;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.image-content {
+    flex: 0 0 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.image-content img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.image-content img:hover {
+    transform: scale(1.05);
+}
+
+/* Content with Image (for AFJROTC sections) */
+.content-with-image {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.text-part {
+    flex: 1;
+}
+
+.image-part {
+    flex: 0 0 300px;
+}
+
+.image-part img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px var(--shadow);
+}
+
+/* Dog Photos */
+.dog-photos {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.dog-photo {
+    width: calc(50% - 10px);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.dog-photo:hover {
+    transform: scale(1.05);
+}
+
+/* JROTC Ball Images */
+.jrotc-ball-images {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.jrotc-ball-images img {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px var(--shadow);
+}
+
+/* Collapsible Sections */
+.collapsible {
+    margin: 20px 0;
+    border: 2px solid var(--light-violet);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.collapsible-btn {
+    width: 100%;
+    background: linear-gradient(135deg, var(--light-violet), var(--dark-violet));
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.1em;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.collapsible-btn:hover {
+    background: linear-gradient(135deg, var(--dark-violet), var(--light-violet));
+}
+
+.event-title {
+    font-weight: bold;
+}
+
+.collapsible-btn i {
+    transition: transform 0.3s ease;
+}
+
+.collapsible-btn.active i {
+    transform: rotate(180deg);
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    background-color: white;
+}
+
+.collapsible-content p {
+    padding: 20px;
+    margin: 0;
+}
+
+/* Contact Cards */
+.contact-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, var(--light-violet), var(--dark-violet));
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.contact-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.contact-card i {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.contact-card span {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+    background: linear-gradient(135deg, var(--dark-violet), var(--light-violet));
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .side-nav {
+        width: 200px;
+    }
+    
+    .content {
+        margin-left: 200px;
+        padding: 30px 40px;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+    }
+    
+    .image-content {
+        flex: 1;
+        width: 100%;
+    }
+    
+    .content-with-image {
+        flex-direction: column;
+    }
+    
+    .image-part {
+        flex: 1;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .side-nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 20px;
+    }
+    
+    .content {
+        margin-left: 0;
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+    
+    section {
+        padding: 20px;
+    }
+    
+    section h2 {
+        font-size: 1.6em;
+    }
+    
+    .dog-photos {
+        flex-direction: column;
+    }
+    
+    .dog-photo {
+        width: 100%;
+    }
+    
+    .contact-cards {
+        gap: 15px;
+    }
+    
+    .contact-card {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .contact-card i {
+        font-size: 2.5em;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--lilac-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--light-violet);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-violet);
+}
