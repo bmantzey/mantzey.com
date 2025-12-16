@@ -1,5 +1,350 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Thomas Mantzey</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
-<p>Ryan TODO: Learn how to make a web page!</p>
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#hero" class="nav-link active">Home</a></li>
+            <li><a href="#air-force" class="nav-link">Air Force</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#car" class="nav-link">My Ride</a></li>
+            <li><a href="#barber" class="nav-link">My Skills</a></li>
+            <li><a href="#graduation" class="nav-link">Graduation</a></li>
+            <li><a href="#dogs" class="nav-link">My Pack</a></li>
+            <li><a href="#loves" class="nav-link">What I Love</a></li>
+            <li><a href="#favorites" class="nav-link">Favorites</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+        <!-- Hero Section -->
+        <section id="hero" class="hero section">
+            <div class="hero-content">
+                <div class="hero-image-container">
+                    <img src="images/snowy-hair.jpeg" alt="Ryan Thomas Mantzey" class="hero-image">
+                </div>
+                <h1 class="hero-name">Ryan Thomas Mantzey</h1>
+            </div>
+        </section>
+
+        <!-- Air Force Section -->
+        <section id="air-force" class="air-force section">
+            <div class="container">
+                <div class="air-force-banner">
+                    <h2>Next Chapter: United States Air Force</h2>
+                    <p class="air-force-details">
+                        Shipping to Basic Training • February 2026<br>
+                        <span class="job-title">Refuel / Bomber Aircraft Maintenance</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section">
+            <div class="container">
+                <h2>About Me</h2>
+                
+                <div class="about-subsection">
+                    <h3>Quick Facts</h3>
+                    <div class="facts-grid">
+                        <div class="fact">
+                            <span class="fact-label">Born:</span>
+                            <span class="fact-value">Orlando, Florida</span>
+                        </div>
+                        <div class="fact">
+                            <span class="fact-label">Heritage:</span>
+                            <span class="fact-value">Half Filipino, Half White</span>
+                        </div>
+                        <div class="fact">
+                            <span class="fact-label">Age:</span>
+                            <span class="fact-value">18</span>
+                        </div>
+                        <div class="fact">
+                            <span class="fact-label">Siblings:</span>
+                            <span class="fact-value">3 - Daeron (19), Mae (15), Thea (11)</span>
+                        </div>
+                        <div class="fact">
+                            <span class="fact-label">Personality:</span>
+                            <span class="fact-value">Energetic & Driven</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-subsection">
+                    <h3>My Journey</h3>
+                    <p>Life has taken me on quite the adventure! I've lived in 6 different states (Florida, Nebraska, Kansas, New York, Connecticut, and Missouri) across 10 different places. Each move taught me to adapt, make new friends, and embrace change.</p>
+                    <p>I transferred from Blue Springs South High School to Holden High School, where I became Class President and really found my stride. It was at Holden where I discovered my passion for weightlifting and continued developing my skills.</p>
+                </div>
+
+                <div class="about-subsection">
+                    <h3>Achievements & Passions</h3>
+                    <ul class="achievements-list">
+                        <li><strong>Academic Excellence:</strong> Graduated with a 3.89 GPA</li>
+                        <li><strong>Choir:</strong> Bass vocalist from 6th-10th grade, took gold at State for small ensembles</li>
+                        <li><strong>Weightlifting:</strong> Started in 8th grade, got serious at Holden
+                            <ul>
+                                <li>First competition: 3rd overall in 135lb weight class</li>
+                                <li>Final competition: 1st overall in every event in my weight class</li>
+                            </ul>
+                        </li>
+                        <li><strong>Athletics:</strong> Involved in baseball, soccer, basketball, and track</li>
+                        <li><strong>Self-Taught Barber:</strong> 6 months of cutting hair</li>
+                        <li><strong>Work Ethic:</strong> Worked at Casey's (July-October 2024), currently at Sonic in Lone Jack</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Car Section -->
+        <section id="car" class="car section">
+            <div class="container">
+                <h2>My Ride</h2>
+                <div class="car-showcase">
+                    <div class="car-image-container">
+                        <img src="images/vw-beetle.jpeg" alt="2003 VW Beetle" class="car-image">
+                    </div>
+                    <div class="car-details">
+                        <h3>2003 VW Beetle</h3>
+                        <p class="car-spec">5-Speed Manual Transmission</p>
+                        <p>My dad taught me how to drive stick, and I love it. There's something special about the connection you feel with a manual transmission - every shift, every rev, it's all you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Barber Section -->
+        <section id="barber" class="barber section">
+            <div class="container">
+                <h2>My Skills</h2>
+                <div class="skills-content">
+                    <div class="skill-intro">
+                        <h3>Self-Taught Barber</h3>
+                        <p>For the past 6 months, I've been honing my skills as a self-taught barber. What started as curiosity became a passion for the craft.</p>
+                    </div>
+                    <div class="barber-gallery">
+                        <div class="barber-image" data-lightbox="0">
+                            <img src="images/haircut.png" alt="Haircut work">
+                        </div>
+                        <div class="barber-image" data-lightbox="1">
+                            <img src="images/haircut-2.png" alt="Haircut work">
+                        </div>
+                        <div class="barber-image" data-lightbox="2">
+                            <img src="images/haircut-3.png" alt="Haircut work">
+                        </div>
+                        <div class="barber-image" data-lightbox="3">
+                            <img src="images/haircut-4.png" alt="Haircut work">
+                        </div>
+                    </div>
+                    <div class="other-talents">
+                        <h3>Other Talents</h3>
+                        <ul class="talents-list">
+                            <li>Singing - Bass vocalist with state gold medal</li>
+                            <li>Rubik's Cubes - Consistently solve under 30 seconds</li>
+                            <li>Typing - 130 WPM average</li>
+                            <li>Basketball - One of my favorite sports</li>
+                            <li>Cooking & Baking - When the motivation strikes!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Graduation Section -->
+        <section id="graduation" class="graduation section">
+            <div class="container">
+                <h2>Graduation - Class of 2025</h2>
+                <p class="graduation-intro">Holden High School - A milestone achievement with the people who matter most</p>
+                <div class="graduation-gallery">
+                    <div class="grad-photo">
+                        <img src="images/graduation-parents.jpeg" alt="Graduation with Parents">
+                        <p class="photo-caption">With my parents</p>
+                    </div>
+                    <div class="grad-photo">
+                        <img src="images/graduation-siblings.jpeg" alt="Graduation with Siblings">
+                        <p class="photo-caption">With my siblings</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dogs Section -->
+        <section id="dogs" class="dogs section">
+            <div class="container">
+                <h2>Meet My Pack</h2>
+                <div class="dogs-grid">
+                    <div class="dog-card">
+                        <div class="dog-image-container">
+                            <img src="images/bandit.jpeg" alt="Bandit the Husky">
+                        </div>
+                        <h3>Bandit</h3>
+                        <p>The fuzzy husky with the beautiful eyes</p>
+                    </div>
+                    <div class="dog-card">
+                        <div class="dog-image-container">
+                            <img src="images/major.png" alt="Major the Lab">
+                        </div>
+                        <h3>Major</h3>
+                        <p>The old white lab with a heart of gold</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Things I Love Section -->
+        <section id="loves" class="loves section">
+            <div class="container">
+                <h2>What I Love</h2>
+                <div class="loves-grid">
+                    <div class="love-item">Music & Singing</div>
+                    <div class="love-item">Being with Friends</div>
+                    <div class="love-item">Basketball</div>
+                    <div class="love-item">Food</div>
+                    <div class="love-item">Watching Football</div>
+                    <div class="love-item">Watching MMA</div>
+                    <div class="love-item">Thrifting</div>
+                    <div class="love-item">Style</div>
+                    <div class="love-item">Cologne</div>
+                    <div class="love-item">Shoes</div>
+                    <div class="love-item">Psychology</div>
+                    <div class="love-item">Gym</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Favorites Section -->
+        <section id="favorites" class="favorites section">
+            <div class="container">
+                <h2>Favorites</h2>
+                <div class="favorites-grid">
+                    <div class="favorite-card">
+                        <div class="card-icon">🍕</div>
+                        <h3>Food</h3>
+                        <ul>
+                            <li>Pizza</li>
+                            <li>Dad's smash burgers</li>
+                            <li>Mom's lumpia</li>
+                            <li>Quesa birria tacos</li>
+                            <li>Crab boil</li>
+                        </ul>
+                    </div>
+                    <div class="favorite-card">
+                        <div class="card-icon">🎨</div>
+                        <h3>Colors</h3>
+                        <ul>
+                            <li>Silver</li>
+                            <li>Dark Red</li>
+                            <li>Dark Green</li>
+                        </ul>
+                    </div>
+                    <div class="favorite-card">
+                        <div class="card-icon">🎵</div>
+                        <h3>Artists</h3>
+                        <ul>
+                            <li>Daniel Caesar</li>
+                            <li>J Cole</li>
+                            <li>Tame Impala</li>
+                            <li>SiR</li>
+                            <li>Laufey</li>
+                            <li>Rex Orange County</li>
+                        </ul>
+                    </div>
+                    <div class="favorite-card">
+                        <div class="card-icon">🐻</div>
+                        <h3>Animals</h3>
+                        <ul>
+                            <li>Bear</li>
+                            <li>Dog</li>
+                        </ul>
+                    </div>
+                    <div class="favorite-card">
+                        <div class="card-icon">☀️</div>
+                        <h3>Seasons</h3>
+                        <ul>
+                            <li>Summer</li>
+                            <li>Fall</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <p class="contact-intro">Let's connect! Reach out through any of these platforms:</p>
+                <div class="contact-grid">
+                    <a href="https://snapchat.com/add/ryan.tzey" target="_blank" class="contact-card">
+                        <div class="contact-icon">👻</div>
+                        <h3>Snapchat</h3>
+                        <p>@ryan.tzey</p>
+                    </a>
+                    <a href="https://instagram.com/ryan.tzey" target="_blank" class="contact-card">
+                        <div class="contact-icon">📷</div>
+                        <h3>Instagram</h3>
+                        <p>@ryan.tzey</p>
+                    </a>
+                    <a href="sms:816-345-9302" class="contact-card">
+                        <div class="contact-icon">📱</div>
+                        <h3>Text</h3>
+                        <p>816-345-9302</p>
+                    </a>
+                    <a href="tel:816-345-9302" class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <h3>Phone</h3>
+                        <p>816-345-9302</p>
+                    </a>
+                    <a href="mailto:ryan@mantzey.com" class="contact-card">
+                        <div class="contact-icon">✉️</div>
+                        <h3>Email</h3>
+                        <p>ryan@mantzey.com</p>
+                    </a>
+                    <a href="https://facebook.com/ryan.tzey" target="_blank" class="contact-card">
+                        <div class="contact-icon">👥</div>
+                        <h3>Facebook</h3>
+                        <p>ryan.tzey</p>
+                    </a>
+                    <a href="https://tiktok.com/@ryan.tzey" target="_blank" class="contact-card">
+                        <div class="contact-icon">🎵</div>
+                        <h3>TikTok</h3>
+                        <p>@ryan.tzey</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 Ryan Thomas Mantzey. All rights reserved.</p>
+        </footer>
+
+        <!-- Lightbox Modal -->
+        <div class="lightbox" id="lightbox">
+            <div class="lightbox-content">
+                <button class="lightbox-close" id="lightboxClose">&times;</button>
+                <img src="" alt="Haircut work" class="lightbox-image" id="lightboxImage">
+                <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+                <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
