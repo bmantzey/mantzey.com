@@ -75,6 +75,7 @@ body {
     left: 20px;
     z-index: 200;
     background: linear-gradient(135deg, var(--dark-violet), var(--light-violet));
+    opacity: 0.5; /* 50% transparent */
     border: none;
     border-radius: 8px;
     width: 50px;
@@ -87,6 +88,10 @@ body {
     padding: 10px;
     box-shadow: 0 4px 15px var(--shadow);
     transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    opacity: 0.8; /* More opaque on hover */
 }
 
 .menu-toggle span {
