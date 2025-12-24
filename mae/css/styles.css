@@ -442,12 +442,12 @@ footer {
 
 @media (max-width: 768px) {
     .menu-toggle {
-        display: flex; /* Show hamburger on mobile */
+        display: flex !important; /* Show hamburger on mobile */
     }
     
     .side-nav {
-        position: fixed;
-        left: -100%; /* Hidden off-screen by default */
+        position: fixed !important;
+        left: -100% !important; /* Hidden off-screen by default */
         top: 0;
         width: 280px;
         height: 100vh;
@@ -456,7 +456,7 @@ footer {
     }
     
     .side-nav.active {
-        left: 0; /* Slide in when active */
+        left: 0 !important; /* Slide in when active */
     }
     
     .content {
