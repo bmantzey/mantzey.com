@@ -81,14 +81,13 @@ document.querySelectorAll('.nav-link').forEach(link => {
         const targetSection = document.querySelector(targetId);
         
         if (targetSection) {
-            // On mobile (nav is position: relative), offsetTop already includes nav height
-            // On desktop (nav is position: fixed), we need a small offset for spacing
-            const isMobile = window.innerWidth <= 768;
-            const offset = isMobile ? 0 : 20;
+            // Use getBoundingClientRect to get the actual position relative to viewport
+            // Then add current scroll position to get absolute position
+            const elementPosition = targetSection.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - 20;
             
-            const offsetTop = targetSection.offsetTop - offset;
             window.scrollTo({
-                top: offsetTop,
+                top: offsetPosition,
                 behavior: 'smooth'
             });
         }
