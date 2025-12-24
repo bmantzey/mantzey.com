@@ -81,13 +81,25 @@ document.querySelectorAll('.nav-link').forEach(link => {
         const targetSection = document.querySelector(targetId);
         
         if (targetSection) {
-            // Use getBoundingClientRect to get the actual position relative to viewport
-            // Then add current scroll position to get absolute position
+            // Get current position of element
             const elementPosition = targetSection.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - 20;
+            const offsetPosition = elementPosition + window.pageYOffset;
+            
+            // On mobile, the nav is at the top taking up space, so we need to scroll
+            // past it to see the section. On desktop, nav is fixed so just small offset.
+            const isMobile = window.innerWidth <= 768;
+            let scrollTarget;
+            
+            if (isMobile) {
+                const nav = document.querySelector('.side-nav');
+                const navHeight = nav ? nav.offsetHeight : 0;
+                scrollTarget = offsetPosition - navHeight - 20;
+            } else {
+                scrollTarget = offsetPosition - 20;
+            }
             
             window.scrollTo({
-                top: offsetPosition,
+                top: scrollTarget,
                 behavior: 'smooth'
             });
         }
