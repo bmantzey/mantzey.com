@@ -73,38 +73,30 @@ function initCollapsibles() {
     });
 }
 
-// Smooth Scroll with Offset
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-        
-        if (targetSection) {
-            // Get current position of element
-            const elementPosition = targetSection.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset;
-            
-            // On mobile, the nav is at the top taking up space, so we need to scroll
-            // past it to see the section. On desktop, nav is fixed so just small offset.
-            const isMobile = window.innerWidth <= 768;
-            let scrollTarget;
-            
-            if (isMobile) {
-                const nav = document.querySelector('.side-nav');
-                const navHeight = nav ? nav.offsetHeight : 0;
-                scrollTarget = offsetPosition - navHeight - 20;
-            } else {
-                scrollTarget = offsetPosition - 20;
-            }
-            
-            window.scrollTo({
-                top: scrollTarget,
-                behavior: 'smooth'
-            });
-        }
+// Mobile Menu Toggle
+const menuToggle = document.getElementById('menuToggle');
+const sidebar = document.getElementById('sidebar');
+const navLinks = document.querySelectorAll('.nav-link');
+
+if (menuToggle && sidebar) {
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        sidebar.classList.toggle('active');
     });
-});
+
+    // Close mobile menu when a link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                menuToggle.classList.remove('active');
+                sidebar.classList.remove('active');
+            }
+        });
+    });
+}
+
+// Smooth scrolling is handled natively by the browser
+// No custom JavaScript needed for navigation links
 
 // Initialize on Page Load
 window.addEventListener('load', () => {
