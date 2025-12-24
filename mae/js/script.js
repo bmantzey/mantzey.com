@@ -81,7 +81,16 @@ document.querySelectorAll('.nav-link').forEach(link => {
         const targetSection = document.querySelector(targetId);
         
         if (targetSection) {
-            const offsetTop = targetSection.offsetTop - 20;
+            // Get the navigation element to check its height
+            const nav = document.querySelector('.side-nav');
+            const navHeight = nav ? nav.offsetHeight : 0;
+            
+            // On mobile (when nav is position: relative), we need to account for nav height
+            // On desktop (when nav is position: fixed), we only need a small offset
+            const isMobile = window.innerWidth <= 768;
+            const offset = isMobile ? navHeight + 20 : 20;
+            
+            const offsetTop = targetSection.offsetTop - offset;
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
