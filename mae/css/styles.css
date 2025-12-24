@@ -74,8 +74,7 @@ body {
     top: 20px;
     left: 20px;
     z-index: 200;
-    background: linear-gradient(135deg, var(--dark-violet), var(--light-violet));
-    opacity: 0.5; /* 50% transparent */
+    background: linear-gradient(135deg, rgba(75, 0, 130, 0.5), rgba(138, 43, 226, 0.5)); /* 50% transparent */
     border: none;
     border-radius: 8px;
     width: 50px;
@@ -91,7 +90,7 @@ body {
 }
 
 .menu-toggle:hover {
-    opacity: 0.8; /* More opaque on hover */
+    background: linear-gradient(135deg, rgba(75, 0, 130, 0.8), rgba(138, 43, 226, 0.8)); /* More opaque on hover */
 }
 
 .menu-toggle span {
